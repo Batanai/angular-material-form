@@ -1,0 +1,201 @@
+<div class="table-container">
+    <mat-table [dataSource]="appData" class="mat-elevation-z8 mat-table-responsive">
+      <ng-container matColumnDef="APP_ID">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> APP ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.APP_ID}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="APP_MIGRATION_ACTIVITY">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Migration Activity </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.APP_MIGRATION_ACTIVITY}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="APP_NAME">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> App Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.APP_NAME}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="AS_IS_APPLICATION_TYPE_AND_TECH_STACK_TAGS">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Tech Stack Tags </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.AS_IS_APPLICATION_TYPE_AND_TECH_STACK_TAGS}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="BUDGET_DIFFERENCE">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Budget Difference </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.BUDGET_DIFFERENCE}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="BUDGET_REMAINING_AT_FG_T_3_AFTER_FUNDING_DISTRIBUTION">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Budget Remaining </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.BUDGET_REMAINING_AT_FG_T_3_AFTER_FUNDING_DISTRIBUTION}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="BUDGET_REQUESTED">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Budget Requested </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.BUDGET_REQUESTED}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="CLOUD_ROOM_ID">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Cloud Room ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.CLOUD_ROOM_ID}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="COMPLETION_ATTESTATION_DATE">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Completion Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.COMPLETION_ATTESTATION_DATE}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="COMPLETION_ATTESTATION_FUNDING_TOTAL">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Completion Funding Total </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.COMPLETION_ATTESTATION_FUNDING_TOTAL}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="CRITICALITY">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Criticality </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.CRITICALITY}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="DASHBOARD_SCOPE">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Dashboard Scope </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.DASHBOARD_SCOPE}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="DB_CLOUD_TARGET">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> DB Cloud Target </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.DB_CLOUD_TARGET}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="DB_MIGRATION_ACTIVITY">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> DB Migration Activity </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.DB_MIGRATION_ACTIVITY}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="DEPARTMENT">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Department </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.DEPARTMENT}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="FUNDABLE">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Fundable </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.FUNDABLE}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="FUNDABLE_REASON">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Fundable Reason </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.FUNDABLE_REASON}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="FUNDING_GENERATED">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Funding Generated </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.FUNDING_GENERATED}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="HYPERSCALER">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Hyperscaler </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.HYPERSCALER}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="INFRASTRUCTURE_COMPONENTS">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Infrastructure Components </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.INFRASTRUCTURE_COMPONENTS}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="INITIAL_ATTESTATION_DATE">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Initial Attestation Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.INITIAL_ATTESTATION_DATE}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="INITIAL_ATTESTATION_FUNDING_TOTAL">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Initial Attestation Funding Total </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.INITIAL_ATTESTATION_FUNDING_TOTAL}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="INTERFACES_IN_OUT">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Interfaces In/Out </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.INTERFACES_IN_OUT}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="JIRA_FIX_VERSION_END">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> JIRA Fix Version End </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.JIRA_FIX_VERSION_END}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="JIRA_FIX_VERSION_START">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> JIRA Fix Version Start </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.JIRA_FIX_VERSION_START}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="MAX_ACCEPTABLE_DOWNTIME">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Max Acceptable Downtime </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.MAX_ACCEPTABLE_DOWNTIME}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="MIGRATION_METHOD">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Migration Method </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.MIGRATION_METHOD}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="MIGRATION_PATH">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Migration Path </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.MIGRATION_PATH}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="PILOT">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Pilot </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.PILOT}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="RESILIANCE_CLASS">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Resilience Class </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.RESILIANCE_CLASS}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="RESULTING_AWS_T_SHIRT_LSV_JIRA">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Resulting AWS T-Shirt LSV Jira </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.RESULTING_AWS_T_SHIRT_LSV_JIRA}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="STORY_POINTS">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Story Points </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.STORY_POINTS}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="TOTAL_FUNDING_RECEIVED">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Total Funding Received </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.TOTAL_FUNDING_RECEIVED}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="TOTAL_LSV_JIRA">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Total LSV Jira </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.TOTAL_LSV_JIRA}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="TARGET_INTERFACES_IN_OUT">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Target Interfaces In/Out </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.TARGET_INTERFACES_IN_OUT}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="TARGET_ALL_APPLICATION_TYPE_AND_TECH_STACK_TAGS">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Target Tech Stack Tags </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.TARGET_ALL_APPLICATION_TYPE_AND_TECH_STACK_TAGS}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef class="header-cell"> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-button (click)="editApp(element.APP_ID)">Edit</button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+    <mat-paginator
+      (page)="onPageChange($event)"
+      [length]="appData.length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+    ></mat-paginator>
+</div>
+  

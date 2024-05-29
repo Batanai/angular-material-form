@@ -1,7 +1,6 @@
-import { FormControl } from "@angular/forms";
 
-export interface BmwForm {
-    APP_ID: string | null;
+export interface AppData {
+  APP_ID: string | null;
   APP_MIGRATION_ACTIVITY: string | null;
   APP_NAME: string | null;
   AS_IS_APPLICATION_TYPE_AND_TECH_STACK_TAGS: string | null;
@@ -38,7 +37,3 @@ export interface BmwForm {
   T_SHIRT_INTERFACES: string | null;
   TARGET_ALL_APPLICATION_TYPE_AND_TECH_STACK_TAGS: string | null;
 }
-
-export type FormControlsOf<T extends Record<string, any>> = {
-    [K in keyof T]: FormControl<T[K]>;
-  };
