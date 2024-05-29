@@ -24,6 +24,7 @@ export class ListViewComponent implements OnInit {
   appData: AppData[] = [];
   loading$ = this.appDataService.loading;
 
+  datasetLength = 0;
   filter: string = '';
   sortDirection: string = 'asc';
   pageIndex: number = 0;
@@ -75,6 +76,7 @@ export class ListViewComponent implements OnInit {
 
   ngOnInit() {
     this.loadAppData();
+    this.appDataService.totalDataLength$.subscribe(length => this.datasetLength = length);
   }
 
   loadAppData() {
@@ -98,8 +100,8 @@ export class ListViewComponent implements OnInit {
     this.loadAppData();
   }
 
-  editApp(id: string){
-
+  editApp(appId: string){
+    this.router.navigate(['/edit', appId]);
   }
 
 }

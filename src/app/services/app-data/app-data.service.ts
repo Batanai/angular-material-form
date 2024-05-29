@@ -12,8 +12,11 @@ import { HttpClient } from '@angular/common/http';
 export class AppDataService {
   private appDataSubject = new BehaviorSubject<AppData[]>([]);
   private loadingSubject = new BehaviorSubject<boolean>(false);
+  private totalDataLengthSubject = new BehaviorSubject<number>(0);
 
   public loading$ = this.loadingSubject.asObservable();
+  public totalDataLength$ = this.totalDataLengthSubject.asObservable();
+
   private appData: AppData[] = []; // Mock data or fetched data should be stored here
 
   private BASE_URL = 'http://localhost:8000'; // API URL
@@ -36,7 +39,7 @@ export class AppDataService {
     return this.http.get<AppData[]>(`${this.BASE_URL}/form-data`).pipe(
       map(data => {
         let filteredData = data;
-        
+
         // Apply filter
         if (filter) {
           filteredData = filteredData.filter(item =>
@@ -53,7 +56,10 @@ export class AppDataService {
             return compare(a['property'], b['property'], isAsc);
           });
         }
-        
+
+        // Update the total length of the data
+        this.totalDataLengthSubject.next(filteredData.length);
+
         // Apply pagination
         const startIndex = pageIndex * pageSize;
         const paginatedData = filteredData.slice(startIndex, startIndex + pageSize);
@@ -68,10 +74,22 @@ export class AppDataService {
     );
   }
 
+
+  getAppDataById(id: string): Observable<AppData> {
+    return this.http.get<AppData>(`${this.BASE_URL}/form-data/${id}`).pipe(
+      catchError(error => {
+        console.error('Error fetching data by ID', error);
+        throw error;
+      })
+    );
+  }
+
   get loading(): Observable<boolean> {
     return this.loading$;
   }
 }
+
+
 
 function compare(a: any, b: any, isAsc: boolean) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);

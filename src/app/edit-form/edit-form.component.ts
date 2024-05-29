@@ -8,6 +8,8 @@ import { MatNativeDateModule } from '@angular/material/core';import { MatButtonM
 import { MatCardModule } from '@angular/material/card';
 import { NgIf } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { AppDataService } from '../services/app-data/app-data.service';
+import { AppData } from '../interfaces/AppData';
 
 @Component({
   selector: 'app-edit-form',
@@ -28,10 +30,14 @@ import { ActivatedRoute } from '@angular/router';
 export class EditFormComponent {
 
   form: FormGroup;
-  itemId: string = '';
+  appData: AppData | undefined;
 
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute){
+  constructor(
+      private fb: FormBuilder, 
+      private route: ActivatedRoute,
+      private appDataService: AppDataService
+  ){
     this.form = this.fb.group({
       APP_ID: ['', Validators.required],
       APP_MIGRATION_ACTIVITY: ['', [Validators.required]],
@@ -73,7 +79,17 @@ export class EditFormComponent {
   }
 
   ngOnInit(): void {
-    // this.itemId = this.route.snapshot.params.id;
+    const appId = this.route.snapshot.paramMap.get('id');
+    if (appId) {
+      this.loadAppData(appId);
+    }  
+  }
+
+  loadAppData(appId: string): void {
+    this.appDataService.getAppDataById(appId).subscribe(data => {
+      this.appData = data;
+      this.form.patchValue(this.appData);
+    });
   }
 
   onSubmit() {
