@@ -3,300 +3,275 @@
     <div class="form-container">
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-grid">
   
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>App_Id</mat-label>
-            <input matInput formControlName="APP_ID">
-            <mat-error *ngIf="form.get('APP_ID')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>App Migration Activity</mat-label>
-            <input matInput formControlName="APP_MIGRATION_ACTIVITY">
-            <mat-error *ngIf="form.get('APP_MIGRATION_ACTIVITY')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>App Name</mat-label>
-            <input matInput formControlName="APP_NAME">
-            <mat-error *ngIf="form.get('APP_NAME')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>As-Is Application Type and Tech Stack Tags</mat-label>
-            <input matInput formControlName="AS_IS_APPLICATION_TYPE_AND_TECH_STACK_TAGS">
-            <mat-error *ngIf="form.get('AS_IS_APPLICATION_TYPE_AND_TECH_STACK_TAGS')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Budget Difference</mat-label>
-            <input matInput formControlName="BUDGET_DIFFERENCE">
-            <mat-error *ngIf="form.get('BUDGET_DIFFERENCE')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Budget remaining at FG-T-3 after funding distribution</mat-label>
-            <input matInput formControlName="BUDGET_REMAINING_AT_FG_T_3_AFTER_FUNDING_DISTRIBUTION">
-            <mat-error *ngIf="form.get('BUDGET_REMAINING_AT_FG_T_3_AFTER_FUNDING_DISTRIBUTION')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Budget requested</mat-label>
-            <input matInput formControlName="BUDGET_REQUESTED">
-            <mat-error *ngIf="form.get('BUDGET_REQUESTED')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Cloud Room Id</mat-label>
-            <input matInput formControlName="CLOUD_ROOM_ID">
-            <mat-error *ngIf="form.get('CLOUD_ROOM_ID')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Completion Attestation Date</mat-label>
-            <input matInput [matDatepicker]="completionAttestationDatePicker" formControlName="COMPLETION_ATTESTATION_DATE">
-            <mat-datepicker-toggle matSuffix [for]="completionAttestationDatePicker"></mat-datepicker-toggle>
-            <mat-datepicker #completionAttestationDatePicker></mat-datepicker>
-            <mat-error *ngIf="form.get('COMPLETION_ATTESTATION_DATE')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Completion Attestation Funding Total</mat-label>
-            <input matInput formControlName="COMPLETION_ATTESTATION_FUNDING_TOTAL">
-            <mat-error *ngIf="form.get('COMPLETION_ATTESTATION_FUNDING_TOTAL')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Criticality</mat-label>
-            <input matInput formControlName="CRITICALITY">
-            <mat-error *ngIf="form.get('CRITICALITY')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Dashboard Scope</mat-label>
-            <input matInput formControlName="DASHBOARD_SCOPE">
-            <mat-error *ngIf="form.get('DASHBOARD_SCOPE')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>DB Cloud Target</mat-label>
-            <input matInput formControlName="DB_CLOUD_TARGET">
-            <mat-error *ngIf="form.get('DB_CLOUD_TARGET')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>DB Migration Activity</mat-label>
-            <input matInput formControlName="DB_MIGRATION_ACTIVITY">
-            <mat-error *ngIf="form.get('DB_MIGRATION_ACTIVITY')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Department</mat-label>
-            <input matInput formControlName="DEPARTMENT">
-            <mat-error *ngIf="form.get('DEPARTMENT')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Fundable</mat-label>
-            <input matInput formControlName="FUNDABLE">
-            <mat-error *ngIf="form.get('FUNDABLE')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Fundable Reason</mat-label>
-            <input matInput formControlName="FUNDABLE_REASON">
-            <mat-error *ngIf="form.get('FUNDABLE_REASON')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Funding Generated</mat-label>
-            <input matInput formControlName="FUNDING_GENERATED">
-            <mat-error *ngIf="form.get('FUNDING_GENERATED')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Hyperscaler</mat-label>
-            <input matInput formControlName="HYPERSCALER">
-            <mat-error *ngIf="form.get('HYPERSCALER')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Infrastructure Components</mat-label>
-            <input matInput formControlName="INFRASTRUCTURE_COMPONENTS">
-            <mat-error *ngIf="form.get('INFRASTRUCTURE_COMPONENTS')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Initial Attestation Date</mat-label>
-            <input matInput [matDatepicker]="initialAttestationDatePicker" formControlName="INITIAL_ATTESTATION_DATE">
-            <mat-datepicker-toggle matSuffix [for]="initialAttestationDatePicker"></mat-datepicker-toggle>
-            <mat-datepicker #initialAttestationDatePicker></mat-datepicker>
-            <mat-error *ngIf="form.get('INITIAL_ATTESTATION_DATE')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Initial Attestation Funding Total</mat-label>
-            <input matInput formControlName="INITIAL_ATTESTATION_FUNDING_TOTAL">
-            <mat-error *ngIf="form.get('INITIAL_ATTESTATION_FUNDING_TOTAL')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Interfaces In/Out</mat-label>
-            <input matInput formControlName="INTERFACES_IN_OUT">
-            <mat-error *ngIf="form.get('INTERFACES_IN_OUT')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row"></div>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Interfaces In/Out</mat-label>
-          <input matInput formControlName="INTERFACES_IN_OUT">
-          <mat-error *ngIf="form.get('INTERFACES_IN_OUT')?.hasError('required')">This field is required</mat-error>
-        </mat-form-field>
-  
-        <div class="form-row"></div>
-        <mat-form-field appearance="fill">
-          <mat-label>Jira Fix Version End</mat-label>
-          <input matInput formControlName="JIRA_FIX_VERSION_END">
-          <mat-error *ngIf="form.get('JIRA_FIX_VERSION_END')?.hasError('required')">This field is required</mat-error>
-        </mat-form-field>
-  
-        <div class="form-row"></div>
-        <mat-form-field appearance="fill">
-          <mat-label>Jira Fix Version Start</mat-label>
-          <input matInput formControlName="JIRA_FIX_VERSION_START">
-          <mat-error *ngIf="form.get('JIRA_FIX_VERSION_START')?.hasError('required')">This field is required</mat-error>
-        </mat-form-field>
-  
-        <div class="form-row"></div>
-        <mat-form-field appearance="fill">
-          <mat-label>Max Acceptable Downtime</mat-label>
-          <input matInput formControlName="MAX_ACCEPTABLE_DOWNTIME">
-          <mat-error *ngIf="form.get('MAX_ACCEPTABLE_DOWNTIME')?.hasError('required')">This field is required</mat-error>
-        </mat-form-field>
-  
-        <div class="form-row"></div>
-        <mat-form-field appearance="fill">
-          <mat-label>Migration Method</mat-label>
-          <input matInput formControlName="MIGRATION_METHOD">
-          <mat-error *ngIf="form.get('MIGRATION_METHOD')?.hasError('required')">This field is required</mat-error>
-        </mat-form-field>
-  
-        <div class="form-row"></div>
-        <mat-form-field appearance="fill">
-          <mat-label>Migration Path</mat-label>
-          <input matInput formControlName="MIGRATION_PATH">
-          <mat-error *ngIf="form.get('MIGRATION_PATH')?.hasError('required')">This field is required</mat-error>
-        </mat-form-field>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Pilot</mat-label>
-            <input matInput formControlName="PILOT">
-            <mat-error *ngIf="form.get('PILOT')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Resilience Class</mat-label>
-            <input matInput formControlName="RESILIANCE_CLASS">
-            <mat-error *ngIf="form.get('RESILIANCE_CLASS')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Resulting AWS T-Shirt LSV/JIRA</mat-label>
-            <input matInput formControlName="RESULTING_AWS_T_SHIRT_LSV_JIRA">
-            <mat-error *ngIf="form.get('RESULTING_AWS_T_SHIRT_LSV_JIRA')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Story points</mat-label>
-            <input matInput formControlName="STORY_POINTS">
-            <mat-error *ngIf="form.get('STORY_POINTS')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Strategy Budget received</mat-label>
-            <input matInput formControlName="STRATEGY_BUDGET_RECEIVED">
-            <mat-error *ngIf="form.get('STRATEGY_BUDGET_RECEIVED')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>T-Shirt Infra LSV</mat-label>
-            <input matInput formControlName="T_SHIRT_INFRA_LSV">
-            <mat-error *ngIf="form.get('T_SHIRT_INFRA_LSV')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>T-Shirt Interfaces</mat-label>
-            <input matInput formControlName="T_SHIRT_INTERFACES">
-            <mat-error *ngIf="form.get('T_SHIRT_INTERFACES')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
-  
-        <div class="form-row">
-          <mat-form-field appearance="fill">
-            <mat-label>Target All Application Type and Tech Stack Tags</mat-label>
-            <input matInput formControlName="TARGET_ALL_APPLICATION_TYPE_AND_TECH_STACK_TAGS">
-            <mat-error *ngIf="form.get('TARGET_ALL_APPLICATION_TYPE_AND_TECH_STACK_TAGS')?.hasError('required')">This field is required</mat-error>
-          </mat-form-field>
-        </div>
+        <!-- APP ID -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>APP ID</mat-label>
+      <input matInput formControlName="APP_ID" readonly>
+      <mat-error *ngIf="appForm.get('APP_ID')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- APP NAME -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>APP NAME</mat-label>
+      <input matInput formControlName="APP NAME">
+      <mat-error *ngIf="appForm.get('APP NAME')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- DEPARTMENT -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>DEPARTMENT</mat-label>
+      <input matInput formControlName="DEPARTMENT">
+      <mat-error *ngIf="appForm.get('DEPARTMENT')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Budget Difference -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Budget Difference</mat-label>
+      <input matInput formControlName="Budget Difference">
+      <mat-error *ngIf="appForm.get('Budget Difference')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Target All Application Type and Tech Stack Tags -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Target All Application Type and Tech Stack Tags</mat-label>
+      <input matInput formControlName="Target All Application Type and Tech Stack Tags">
+      <mat-error *ngIf="appForm.get('Target All Application Type and Tech Stack Tags')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Fundable reason -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Fundable reason</mat-label>
+      <input matInput formControlName="Fundable reason">
+      <mat-error *ngIf="appForm.get('Fundable reason')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- T-Shirt Infra LSV -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>T-Shirt Infra LSV</mat-label>
+      <input matInput formControlName="T-Shirt Infra LSV">
+      <mat-error *ngIf="appForm.get('T-Shirt Infra LSV')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Funding generated -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Funding generated</mat-label>
+      <input matInput formControlName="Funding generated">
+      <mat-error *ngIf="appForm.get('Funding generated')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Budget remaining at FG-T-3 after funding distribution -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Budget remaining at FG-T-3 after funding distribution</mat-label>
+      <input matInput formControlName="Budget remaining at FG-T-3 after funding distribution">
+      <mat-error *ngIf="appForm.get('Budget remaining at FG-T-3 after funding distribution')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Strategy Budget received -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Strategy Budget received</mat-label>
+      <input matInput formControlName="Strategy Budget received">
+      <mat-error *ngIf="appForm.get('Strategy Budget received')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Interfaces In/Out -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Interfaces In/Out</mat-label>
+      <input matInput formControlName="Interfaces In/Out">
+      <mat-error *ngIf="appForm.get('Interfaces In/Out')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- T-Shirt Interfaces -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>T-Shirt Interfaces</mat-label>
+      <input matInput formControlName="T-Shirt Interfaces">
+      <mat-error *ngIf="appForm.get('T-Shirt Interfaces')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Budget requested -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Budget requested</mat-label>
+      <input matInput formControlName="Budget requested">
+      <mat-error *ngIf="appForm.get('Budget requested')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Completion Attestation Date -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Completion Attestation Date</mat-label>
+      <input matInput formControlName="Completion Attestation Date">
+      <mat-error *ngIf="appForm.get('Completion Attestation Date')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Dashboard Scope -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Dashboard Scope</mat-label>
+      <input matInput formControlName="Dashboard Scope">
+      <mat-error *ngIf="appForm.get('Dashboard Scope')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Criticality -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Criticality</mat-label>
+      <input matInput formControlName="Criticality">
+      <mat-error *ngIf="appForm.get('Criticality')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Resulting AWS T-Shirt LSV/JIRA -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Resulting AWS T-Shirt LSV/JIRA</mat-label>
+      <input matInput formControlName="Resulting AWS T-Shirt LSV/JIRA">
+      <mat-error *ngIf="appForm.get('Resulting AWS T-Shirt LSV/JIRA')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- App Migration Activity -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>App Migration Activity</mat-label>
+      <input matInput formControlName="App Migration Activity">
+      <mat-error *ngIf="appForm.get('App Migration Activity')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Completion Attestation Funding Total -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Completion Attestation Funding Total</mat-label>
+      <input matInput formControlName="Completion Attestation Funding Total">
+      <mat-error *ngIf="appForm.get('Completion Attestation Funding Total')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Resilience Class -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Resilience Class</mat-label>
+      <input matInput formControlName="Resilience Class">
+      <mat-error *ngIf="appForm.get('Resilience Class')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- DB Migration Activity -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>DB Migration Activity</mat-label>
+      <input matInput formControlName="DB Migration Activity">
+      <mat-error *ngIf="appForm.get('DB Migration Activity')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Fundable -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Fundable</mat-label>
+      <input matInput formControlName="Fundable">
+      <mat-error *ngIf="appForm.get('Fundable')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Initial Attestation Funding Total -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Initial Attestation Funding Total</mat-label>
+      <input matInput formControlName="Initial Attestation Funding Total">
+      <mat-error *ngIf="appForm.get('Initial Attestation Funding Total')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Hyperscaler -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Hyperscaler</mat-label>
+      <input matInput formControlName="Hyperscaler">
+      <mat-error *ngIf="appForm.get('Hyperscaler')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Migration Method -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Migration Method</mat-label>
+      <input matInput formControlName="Migration Method">
+      <mat-error *ngIf="appForm.get('Migration Method')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Migration Path -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Migration Path</mat-label>
+      <input matInput formControlName="Migration Path">
+      <mat-error *ngIf="appForm.get('Migration Path')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Pilot -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Pilot</mat-label>
+      <input matInput formControlName="Pilot">
+      <mat-error *ngIf="appForm.get('Pilot')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- DB Cloud Target -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>DB Cloud Target</mat-label>
+      <input matInput formControlName="DB Cloud Target">
+      <mat-error *ngIf="appForm.get('DB Cloud Target')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Infrastructure Components -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Infrastructure Components</mat-label>
+      <input matInput formControlName="Infrastructure Components">
+      <mat-error *ngIf="appForm.get('Infrastructure Components')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- Initial Attestation Date -->
+  <div class="form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Initial Attestation Date</mat-label>
+      <input matInput formControlName="Initial Attestation Date">
+      <mat-error *ngIf="appForm.get('Initial Attestation Date')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+  </div>
   
         <div class="form-row">
           <button mat-raised-button color="primary" type="submit">SUBMIT FORM</button>

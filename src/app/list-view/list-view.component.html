@@ -1,188 +1,189 @@
 <div class="table-container">
     <mat-table [dataSource]="appData" class="mat-elevation-z8 mat-table-responsive">
+      
+      <!-- APP ID Column -->
       <ng-container matColumnDef="APP_ID">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> APP ID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.APP_ID}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="APP_MIGRATION_ACTIVITY">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Migration Activity </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.APP_MIGRATION_ACTIVITY}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="APP_NAME">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> App Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.APP_NAME}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="AS_IS_APPLICATION_TYPE_AND_TECH_STACK_TAGS">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Tech Stack Tags </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.AS_IS_APPLICATION_TYPE_AND_TECH_STACK_TAGS}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="BUDGET_DIFFERENCE">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Budget Difference </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.BUDGET_DIFFERENCE}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="BUDGET_REMAINING_AT_FG_T_3_AFTER_FUNDING_DISTRIBUTION">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Budget Remaining </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.BUDGET_REMAINING_AT_FG_T_3_AFTER_FUNDING_DISTRIBUTION}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="BUDGET_REQUESTED">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Budget Requested </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.BUDGET_REQUESTED}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="CLOUD_ROOM_ID">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Cloud Room ID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.CLOUD_ROOM_ID}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="COMPLETION_ATTESTATION_DATE">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Completion Date </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.COMPLETION_ATTESTATION_DATE}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="COMPLETION_ATTESTATION_FUNDING_TOTAL">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Completion Funding Total </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.COMPLETION_ATTESTATION_FUNDING_TOTAL}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="CRITICALITY">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Criticality </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.CRITICALITY}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="DASHBOARD_SCOPE">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Dashboard Scope </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.DASHBOARD_SCOPE}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="DB_CLOUD_TARGET">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> DB Cloud Target </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.DB_CLOUD_TARGET}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="DB_MIGRATION_ACTIVITY">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> DB Migration Activity </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.DB_MIGRATION_ACTIVITY}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="DEPARTMENT">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Department </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.DEPARTMENT}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="FUNDABLE">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Fundable </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.FUNDABLE}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="FUNDABLE_REASON">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Fundable Reason </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.FUNDABLE_REASON}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="FUNDING_GENERATED">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Funding Generated </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.FUNDING_GENERATED}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="HYPERSCALER">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Hyperscaler </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.HYPERSCALER}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="INFRASTRUCTURE_COMPONENTS">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Infrastructure Components </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.INFRASTRUCTURE_COMPONENTS}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="INITIAL_ATTESTATION_DATE">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Initial Attestation Date </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.INITIAL_ATTESTATION_DATE}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="INITIAL_ATTESTATION_FUNDING_TOTAL">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Initial Attestation Funding Total </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.INITIAL_ATTESTATION_FUNDING_TOTAL}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="INTERFACES_IN_OUT">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Interfaces In/Out </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.INTERFACES_IN_OUT}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="JIRA_FIX_VERSION_END">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> JIRA Fix Version End </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.JIRA_FIX_VERSION_END}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="JIRA_FIX_VERSION_START">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> JIRA Fix Version Start </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.JIRA_FIX_VERSION_START}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="MAX_ACCEPTABLE_DOWNTIME">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Max Acceptable Downtime </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.MAX_ACCEPTABLE_DOWNTIME}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="MIGRATION_METHOD">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Migration Method </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.MIGRATION_METHOD}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="MIGRATION_PATH">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Migration Path </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.MIGRATION_PATH}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="PILOT">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Pilot </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.PILOT}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="RESILIANCE_CLASS">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Resilience Class </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.RESILIANCE_CLASS}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="RESULTING_AWS_T_SHIRT_LSV_JIRA">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Resulting AWS T-Shirt LSV Jira </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.RESULTING_AWS_T_SHIRT_LSV_JIRA}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="STORY_POINTS">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Story Points </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.STORY_POINTS}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="TOTAL_FUNDING_RECEIVED">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Total Funding Received </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.TOTAL_FUNDING_RECEIVED}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="TOTAL_LSV_JIRA">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Total LSV Jira </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.TOTAL_LSV_JIRA}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="TARGET_INTERFACES_IN_OUT">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Target Interfaces In/Out </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.TARGET_INTERFACES_IN_OUT}} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="TARGET_ALL_APPLICATION_TYPE_AND_TECH_STACK_TAGS">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Target Tech Stack Tags </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.TARGET_ALL_APPLICATION_TYPE_AND_TECH_STACK_TAGS}} </mat-cell>
-      </ng-container>
+        <th mat-header-cell *matHeaderCellDef class="column-header"> APP ID </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['APP_ID']}} </td>
+    </ng-container>
+
+    <!-- APP NAME Column -->
+    <ng-container matColumnDef="APP NAME">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> APP NAME </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['APP NAME']}} </td>
+    </ng-container>
+
+    <!-- DEPARTMENT Column -->
+    <ng-container matColumnDef="DEPARTMENT">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> DEPARTMENT </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['DEPARTMENT']}} </td>
+    </ng-container>
+
+    <!-- BUDGET DIFFERENCE Column -->
+    <ng-container matColumnDef="Budget Difference">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Budget Difference </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Budget Difference']}} </td>
+    </ng-container>
+
+    <!-- TARGET ALL APPLICATION TYPE AND TECH STACK TAGS Column -->
+    <ng-container matColumnDef="Target All Application Type and Tech Stack Tags">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Target All Application Type and Tech Stack Tags </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Target All Application Type and Tech Stack Tags']}} </td>
+    </ng-container>
+
+    <!-- FUNDABLE REASON Column -->
+    <ng-container matColumnDef="Fundable reason">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Fundable reason </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Fundable reason']}} </td>
+    </ng-container>
+
+    <!-- T-SHIRT INFRA LSV Column -->
+    <ng-container matColumnDef="T-Shirt Infra LSV">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> T-Shirt Infra LSV </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['T-Shirt Infra LSV']}} </td>
+    </ng-container>
+
+    <!-- FUNDING GENERATED Column -->
+    <ng-container matColumnDef="Funding generated">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Funding generated </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Funding generated']}} </td>
+    </ng-container>
+
+    <!-- BUDGET REMAINING AT FG-T-3 AFTER FUNDING DISTRIBUTION Column -->
+    <ng-container matColumnDef="Budget remaining at FG-T-3 after funding distribution">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Budget remaining at FG-T-3 after funding distribution </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Budget remaining at FG-T-3 after funding distribution']}} </td>
+    </ng-container>
+
+    <!-- STRATEGY BUDGET RECEIVED Column -->
+    <ng-container matColumnDef="Strategy Budget received">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Strategy Budget received </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Strategy Budget received']}} </td>
+    </ng-container>
+
+    <!-- INTERFACES IN/OUT Column -->
+    <ng-container matColumnDef="Interfaces In/Out">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Interfaces In/Out </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Interfaces In/Out']}} </td>
+    </ng-container>
+
+    <!-- T-SHIRT INTERFACES Column -->
+    <ng-container matColumnDef="T-Shirt Interfaces">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> T-Shirt Interfaces </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['T-Shirt Interfaces']}} </td>
+    </ng-container>
+
+    <!-- BUDGET REQUESTED Column -->
+    <ng-container matColumnDef="Budget requested">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Budget requested </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Budget requested']}} </td>
+    </ng-container>
+
+    <!-- COMPLETION ATTESTATION DATE Column -->
+    <ng-container matColumnDef="Completion Attestation Date">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Completion Attestation Date </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Completion Attestation Date']}} </td>
+    </ng-container>
+
+    <!-- DASHBOARD SCOPE Column -->
+    <ng-container matColumnDef="Dashboard Scope">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Dashboard Scope </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Dashboard Scope']}} </td>
+    </ng-container>
+
+    <!-- CRITICALITY Column -->
+    <ng-container matColumnDef="Criticality">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Criticality </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Criticality']}} </td>
+    </ng-container>
+
+    <!-- RESULTING AWS T-SHIRT LSV/JIRA Column -->
+    <ng-container matColumnDef="Resulting AWS T-Shirt LSV/JIRA">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Resulting AWS T-Shirt LSV/JIRA </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Resulting AWS T-Shirt LSV/JIRA']}} </td>
+    </ng-container>
+
+    <!-- APP MIGRATION ACTIVITY Column -->
+    <ng-container matColumnDef="App Migration Activity">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> App Migration Activity </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['App Migration Activity']}} </td>
+    </ng-container>
+
+    <!-- COMPLETION ATTESTATION FUNDING TOTAL Column -->
+    <ng-container matColumnDef="Completion Attestation Funding Total">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Completion Attestation Funding Total </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Completion Attestation Funding Total']}} </td>
+    </ng-container>
+
+    <!-- RESILIENCE CLASS Column -->
+    <ng-container matColumnDef="Resilience Class">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Resilience Class </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Resilience Class']}} </td>
+    </ng-container>
+
+    <!-- DB MIGRATION ACTIVITY Column -->
+    <ng-container matColumnDef="DB Migration Activity">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> DB Migration Activity </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['DB Migration Activity']}} </td>
+    </ng-container>
+
+    <!-- FUNDABLE Column -->
+    <ng-container matColumnDef="Fundable">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Fundable </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Fundable']}} </td>
+    </ng-container>
+
+    <!-- INITIAL ATTESTATION FUNDING TOTAL Column -->
+    <ng-container matColumnDef="Initial Attestation Funding Total">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Initial Attestation Funding Total </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Initial Attestation Funding Total']}} </td>
+    </ng-container>
+
+    <!-- HYPERSCALER Column -->
+    <ng-container matColumnDef="Hyperscaler">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Hyperscaler </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Hyperscaler']}} </td>
+    </ng-container>
+
+    <!-- MIGRATION METHOD Column -->
+    <ng-container matColumnDef="Migration Method">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Migration Method </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Migration Method']}} </td>
+    </ng-container>
+
+    <!-- MIGRATION PATH Column -->
+    <ng-container matColumnDef="Migration Path">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Migration Path </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Migration Path']}} </td>
+    </ng-container>
+
+    <!-- PILOT Column -->
+    <ng-container matColumnDef="Pilot">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Pilot </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Pilot']}} </td>
+    </ng-container>
+
+    <!-- DB CLOUD TARGET Column -->
+    <ng-container matColumnDef="DB Cloud Target">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> DB Cloud Target </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['DB Cloud Target']}} </td>
+    </ng-container>
+
+    <!-- INFRASTRUCTURE COMPONENTS Column -->
+    <ng-container matColumnDef="Infrastructure Components">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Infrastructure Components </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Infrastructure Components']}} </td>
+    </ng-container>
+
+    <!-- INITIAL ATTESTATION DATE Column -->
+    <ng-container matColumnDef="Initial Attestation Date">
+        <th mat-header-cell *matHeaderCellDef class="column-header"> Initial Attestation Date </th>
+        <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Initial Attestation Date']}} </td>
+    </ng-container>
   
       <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef class="header-cell"> Actions </mat-header-cell>
-        <mat-cell *matCellDef="let element">
+        <mat-header-cell *matHeaderCellDef class="column-header"> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="column-cell">
           <button mat-button (click)="editApp(element.APP_ID)">Edit</button>
         </mat-cell>
       </ng-container>

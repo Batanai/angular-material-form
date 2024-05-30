@@ -2,7 +2,7 @@
 
 .table-container {
     overflow-x: auto;
-    width: 250%;
+    width: 350%;
 
 }
 
@@ -10,8 +10,19 @@
     min-width: 1000px; /* Adjust this value as needed */
 }
 
-.header-cell {
-    white-space: normal;
-    word-wrap: break-word;
-    width: 200px; /* Adjust this value as needed */
+.column-header, .column-cell {
+    min-width: 150px; /* Adjust based on your need */
+    max-width: 200px; /* Adjust based on your need */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.column-header {
+    font-weight: bold;
+}
+
+.column-cell {
+    white-space: normal; /* Allow text wrapping */
+    word-wrap: break-word; /* Wrap long words */
 }
