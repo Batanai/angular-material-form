@@ -6,6 +6,8 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { EditFormComponent } from '../edit-form/edit-form.component';
 
 
 @Component({
@@ -66,7 +68,11 @@ export class ListViewComponent implements OnInit {
   ];
 
 
-  constructor(private appDataService: AppDataService, private router: Router) { }
+  constructor(
+    private appDataService: AppDataService, 
+    private router: Router,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit() {
     this.loadAppData();
@@ -92,6 +98,24 @@ export class ListViewComponent implements OnInit {
   onFilterChange(filterValue: string) {
     this.filter = filterValue;
     this.loadAppData();
+  }
+
+
+  openEditDialog(element: AppData): void {
+    const dialogRef = this.dialog.open(EditFormComponent, {
+      width: '80%',
+      height: '100vh',
+      maxWidth: '100vw',
+      panelClass: 'custom-dialog-container',
+      data: element
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Handle the updated result, e.g., save to server or update the local data array
+        console.log('The dialog was closed with data: ', result);
+      }
+    });
   }
 
   editApp(appId: string){

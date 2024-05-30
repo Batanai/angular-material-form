@@ -17,6 +17,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -34,7 +35,8 @@ export const appConfig: ApplicationConfig = {
       MatTableModule,
       MatPaginatorModule,
       MatSortModule,
-      HttpClientModule
+      HttpClientModule,
+      MatDialogModule
     ),
   ]
 };
