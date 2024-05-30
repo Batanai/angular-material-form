@@ -8,7 +8,7 @@
     <mat-form-field appearance="fill">
       <mat-label>APP ID</mat-label>
       <input matInput formControlName="APP_ID" readonly>
-      <mat-error *ngIf="appForm.get('APP_ID')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('APP_ID')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -17,7 +17,7 @@
     <mat-form-field appearance="fill">
       <mat-label>APP NAME</mat-label>
       <input matInput formControlName="APP NAME">
-      <mat-error *ngIf="appForm.get('APP NAME')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('APP NAME')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -26,7 +26,7 @@
     <mat-form-field appearance="fill">
       <mat-label>DEPARTMENT</mat-label>
       <input matInput formControlName="DEPARTMENT">
-      <mat-error *ngIf="appForm.get('DEPARTMENT')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('DEPARTMENT')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -35,7 +35,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Budget Difference</mat-label>
       <input matInput formControlName="Budget Difference">
-      <mat-error *ngIf="appForm.get('Budget Difference')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Budget Difference')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -44,7 +44,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Target All Application Type and Tech Stack Tags</mat-label>
       <input matInput formControlName="Target All Application Type and Tech Stack Tags">
-      <mat-error *ngIf="appForm.get('Target All Application Type and Tech Stack Tags')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Target All Application Type and Tech Stack Tags')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -53,7 +53,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Fundable reason</mat-label>
       <input matInput formControlName="Fundable reason">
-      <mat-error *ngIf="appForm.get('Fundable reason')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Fundable reason')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -62,7 +62,7 @@
     <mat-form-field appearance="fill">
       <mat-label>T-Shirt Infra LSV</mat-label>
       <input matInput formControlName="T-Shirt Infra LSV">
-      <mat-error *ngIf="appForm.get('T-Shirt Infra LSV')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('T-Shirt Infra LSV')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -71,7 +71,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Funding generated</mat-label>
       <input matInput formControlName="Funding generated">
-      <mat-error *ngIf="appForm.get('Funding generated')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Funding generated')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -80,7 +80,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Budget remaining at FG-T-3 after funding distribution</mat-label>
       <input matInput formControlName="Budget remaining at FG-T-3 after funding distribution">
-      <mat-error *ngIf="appForm.get('Budget remaining at FG-T-3 after funding distribution')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Budget remaining at FG-T-3 after funding distribution')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -89,7 +89,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Strategy Budget received</mat-label>
       <input matInput formControlName="Strategy Budget received">
-      <mat-error *ngIf="appForm.get('Strategy Budget received')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Strategy Budget received')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -98,7 +98,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Interfaces In/Out</mat-label>
       <input matInput formControlName="Interfaces In/Out">
-      <mat-error *ngIf="appForm.get('Interfaces In/Out')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Interfaces In/Out')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -107,7 +107,7 @@
     <mat-form-field appearance="fill">
       <mat-label>T-Shirt Interfaces</mat-label>
       <input matInput formControlName="T-Shirt Interfaces">
-      <mat-error *ngIf="appForm.get('T-Shirt Interfaces')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('T-Shirt Interfaces')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -116,7 +116,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Budget requested</mat-label>
       <input matInput formControlName="Budget requested">
-      <mat-error *ngIf="appForm.get('Budget requested')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Budget requested')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -125,7 +125,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Completion Attestation Date</mat-label>
       <input matInput formControlName="Completion Attestation Date">
-      <mat-error *ngIf="appForm.get('Completion Attestation Date')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Completion Attestation Date')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -134,7 +134,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Dashboard Scope</mat-label>
       <input matInput formControlName="Dashboard Scope">
-      <mat-error *ngIf="appForm.get('Dashboard Scope')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Dashboard Scope')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -143,7 +143,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Criticality</mat-label>
       <input matInput formControlName="Criticality">
-      <mat-error *ngIf="appForm.get('Criticality')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Criticality')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -152,7 +152,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Resulting AWS T-Shirt LSV/JIRA</mat-label>
       <input matInput formControlName="Resulting AWS T-Shirt LSV/JIRA">
-      <mat-error *ngIf="appForm.get('Resulting AWS T-Shirt LSV/JIRA')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Resulting AWS T-Shirt LSV/JIRA')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -161,7 +161,7 @@
     <mat-form-field appearance="fill">
       <mat-label>App Migration Activity</mat-label>
       <input matInput formControlName="App Migration Activity">
-      <mat-error *ngIf="appForm.get('App Migration Activity')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('App Migration Activity')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -170,7 +170,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Completion Attestation Funding Total</mat-label>
       <input matInput formControlName="Completion Attestation Funding Total">
-      <mat-error *ngIf="appForm.get('Completion Attestation Funding Total')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Completion Attestation Funding Total')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -179,7 +179,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Resilience Class</mat-label>
       <input matInput formControlName="Resilience Class">
-      <mat-error *ngIf="appForm.get('Resilience Class')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Resilience Class')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -188,7 +188,7 @@
     <mat-form-field appearance="fill">
       <mat-label>DB Migration Activity</mat-label>
       <input matInput formControlName="DB Migration Activity">
-      <mat-error *ngIf="appForm.get('DB Migration Activity')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('DB Migration Activity')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -197,7 +197,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Fundable</mat-label>
       <input matInput formControlName="Fundable">
-      <mat-error *ngIf="appForm.get('Fundable')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Fundable')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -206,7 +206,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Initial Attestation Funding Total</mat-label>
       <input matInput formControlName="Initial Attestation Funding Total">
-      <mat-error *ngIf="appForm.get('Initial Attestation Funding Total')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Initial Attestation Funding Total')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -215,7 +215,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Hyperscaler</mat-label>
       <input matInput formControlName="Hyperscaler">
-      <mat-error *ngIf="appForm.get('Hyperscaler')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Hyperscaler')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -224,7 +224,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Migration Method</mat-label>
       <input matInput formControlName="Migration Method">
-      <mat-error *ngIf="appForm.get('Migration Method')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Migration Method')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -233,7 +233,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Migration Path</mat-label>
       <input matInput formControlName="Migration Path">
-      <mat-error *ngIf="appForm.get('Migration Path')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Migration Path')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -242,7 +242,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Pilot</mat-label>
       <input matInput formControlName="Pilot">
-      <mat-error *ngIf="appForm.get('Pilot')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Pilot')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -251,7 +251,7 @@
     <mat-form-field appearance="fill">
       <mat-label>DB Cloud Target</mat-label>
       <input matInput formControlName="DB Cloud Target">
-      <mat-error *ngIf="appForm.get('DB Cloud Target')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('DB Cloud Target')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -260,7 +260,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Infrastructure Components</mat-label>
       <input matInput formControlName="Infrastructure Components">
-      <mat-error *ngIf="appForm.get('Infrastructure Components')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Infrastructure Components')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
 
@@ -269,7 +269,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Initial Attestation Date</mat-label>
       <input matInput formControlName="Initial Attestation Date">
-      <mat-error *ngIf="appForm.get('Initial Attestation Date')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="form.get('Initial Attestation Date')?.hasError('required')">This field is required</mat-error>
     </mat-form-field>
   </div>
   
