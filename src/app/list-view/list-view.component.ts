@@ -64,7 +64,6 @@ export class ListViewComponent implements OnInit {
     'DB Cloud Target',
     'Infrastructure Components',
     'Initial Attestation Date',
-    'actions'
   ];
 
 

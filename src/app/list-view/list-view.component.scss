@@ -18,6 +18,12 @@
     text-overflow: ellipsis;
 }
 
+.mat-cell {
+    min-height: 100px; /* Set a minimum height for cells */
+    align-items:start;
+    justify-content:start
+  }
+
 .column-header {
     font-weight: bold;
 }
