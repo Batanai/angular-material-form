@@ -8,7 +8,12 @@ import { MatSortModule } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { EditFormComponent } from '../edit-form/edit-form.component';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CommonModule } from '@angular/common';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-list-view',
@@ -17,6 +22,12 @@ import { EditFormComponent } from '../edit-form/edit-form.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    CommonModule,
+    LoaderComponent
   ],
   templateUrl: './list-view.component.html',
   styleUrl: './list-view.component.scss'
@@ -32,6 +43,8 @@ export class ListViewComponent implements OnInit {
   pageIndex: number = 0;
   pageSize: number = 10;
   pageSizeOptions = [5, 10, 25, 100];
+  loading = true;
+
 
   displayedColumns: string[] = [
     'APP_ID',
@@ -78,9 +91,18 @@ export class ListViewComponent implements OnInit {
     this.appDataService.totalDataLength$.subscribe(length => this.datasetLength = length);
   }
 
-  loadAppData() {
-    this.appDataService.getAppData(this.filter, this.sortDirection, this.pageIndex, this.pageSize)
-      .subscribe(data => this.appData = data);
+  async loadAppData() {
+    this.loading = true;
+    await this.appDataService.getAppData(this.filter, this.sortDirection, this.pageIndex, this.pageSize)
+      .subscribe(data => {
+        this.appData = data;
+        this.loading = false;
+      }, 
+      (error) => {
+        console.error('Error fetching app data', error);
+        this.loading = false;
+      }
+    );
   }
 
   onPageChange(event: any) {

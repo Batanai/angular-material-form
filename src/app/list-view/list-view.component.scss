@@ -11,7 +11,7 @@
 }
 
 .column-header, .column-cell {
-    min-width: 150px; /* Adjust based on your need */
+    min-width: 170px; /* Adjust based on your need */
     max-width: 200px; /* Adjust based on your need */
     white-space: nowrap;
     overflow: hidden;
@@ -20,8 +20,9 @@
 
 .mat-cell {
     min-height: 100px; /* Set a minimum height for cells */
-    align-items:start;
-    justify-content:start
+    align-items: self-start;
+    justify-content:start;
+    padding: 8px;
   }
 
 .column-header {
@@ -32,3 +33,15 @@
     white-space: normal; /* Allow text wrapping */
     word-wrap: break-word; /* Wrap long words */
 }
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .table-container.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+  }

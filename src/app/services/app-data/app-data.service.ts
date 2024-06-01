@@ -87,6 +87,10 @@ export class AppDataService {
     );
   }
 
+  updateAppData(id: string | null, appData: Partial<AppData>): Observable<AppData> {
+    return this.http.put<AppData>(`${this.BASE_URL}/edit/${id}`, appData);
+  }
+
 
   private mapAppData(data: any): AppData {
     return {

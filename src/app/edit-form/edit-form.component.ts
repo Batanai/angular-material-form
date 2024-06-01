@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AppDataService } from '../services/app-data/app-data.service';
 import { AppData } from '../interfaces/AppData';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-edit-form',
@@ -23,7 +25,9 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
     MatCardModule,
     NgIf,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatProgressSpinnerModule,
+
   ],
   templateUrl: './edit-form.component.html',
   styleUrl: './edit-form.component.scss'
@@ -32,11 +36,14 @@ export class EditFormComponent {
 
   form: FormGroup;
   appData: AppData | undefined;
+  loading = false;
 
 
   constructor(
       private fb: FormBuilder, 
       public dialogRef: MatDialogRef<EditFormComponent>,
+      private appDataService: AppDataService,
+      private snackBar: MatSnackBar,
       @Inject(MAT_DIALOG_DATA) public data: AppData
   ){
     this.form = this.fb.group({
@@ -74,18 +81,9 @@ export class EditFormComponent {
   }
 
   ngOnInit(): void {
-    // const appId = this.route.snapshot.paramMap.get('id');
-    // if (appId) {
-    //   this.loadAppData(appId);
-    // }  
+ 
   }
 
-  // loadAppData(appId: string): void {
-  //   this.appDataService.getAppDataById(appId).subscribe(data => {
-  //     this.appData = data;
-  //     this.form.patchValue(this.appData);
-  //   });
-  // }
 
   onCancel(): void {
     this.dialogRef.close();
@@ -93,7 +91,25 @@ export class EditFormComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log('Form Submitted', this.form.value);
+      this.loading = true;
+
+      this.appDataService.updateAppData(this.data.APP_ID, this.form.value).subscribe(
+        (response) => {
+          this.loading = false;
+          this.snackBar.open('Update successful!', 'Close', {
+            duration: 3000,
+          });
+          this.dialogRef.close(response);
+
+        },
+        (error) => {
+          this.loading = false;
+          this.snackBar.open('Error updating app data', 'Close', {
+            duration: 3000,
+          });
+          console.error('Error updating app data', error);
+        }
+      );
     }
   }
 }

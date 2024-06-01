@@ -1,15 +1,15 @@
-<div class="table-container">
+<app-loader [loading]="loading$ | async"></app-loader>
+
+<div class="table-container" [ngClass]="{'blurred': (loading$ | async)}">
     <mat-table [dataSource]="appData" class="mat-elevation-z8 mat-table-responsive">
       
       <!-- APP ID Column -->
-    <ng-container matColumnDef="APP_ID">
+      <ng-container matColumnDef="APP_ID">
         <th mat-header-cell *matHeaderCellDef class="column-header"> APP ID </th>
-        <td mat-cell *matCellDef="let element" class="column-cell">
-          <a href="#" (click)="openEditDialog(element); $event.preventDefault();" class="app-id-link">
-            {{element['APP_ID']}}
-          </a>
+        <td mat-cell *matCellDef="let element" class="column-cell">  
+            <button mat-button color="primary" (click)="openEditDialog(element)">{{element['APP_ID']}}</button>
         </td>
-      </ng-container>
+    </ng-container>
 
     <!-- APP NAME Column -->
     <ng-container matColumnDef="APP NAME">
@@ -184,16 +184,18 @@
         <th mat-header-cell *matHeaderCellDef class="column-header"> Initial Attestation Date </th>
         <td mat-cell *matCellDef="let element" class="column-cell"> {{element['Initial Attestation Date']}} </td>
     </ng-container>
+    
   
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
   
-    <mat-paginator
+</div>
+
+<mat-paginator
       (page)="onPageChange($event)"
       [length]="datasetLength"
       [pageSize]="pageSize"
       [pageSizeOptions]="pageSizeOptions"
     ></mat-paginator>
-</div>
   
