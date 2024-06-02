@@ -11,18 +11,18 @@
 }
 
 .column-header, .column-cell {
-    min-width: 170px; /* Adjust based on your need */
-    max-width: 200px; /* Adjust based on your need */
+    min-width: 190px; /* Adjust based on your need */
+    max-width: 220px; /* Adjust based on your need */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .mat-cell {
-    min-height: 100px; /* Set a minimum height for cells */
-    align-items: self-start;
+    min-height: 125px; /* Set a minimum height for cells */
+    align-items: flex-start;
     justify-content:start;
-    padding: 8px;
+    padding-bottom: 16px;
   }
 
 .column-header {
@@ -44,4 +44,11 @@
   .table-container.blurred {
     filter: blur(5px);
     pointer-events: none;
+  }
+  
+  .mat-paginator {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 24px;
+    width: auto;
   }
