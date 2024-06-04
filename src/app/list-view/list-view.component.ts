@@ -14,6 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from '../loader/loader.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-list-view',
@@ -27,7 +29,10 @@ import { LoaderComponent } from '../loader/loader.component';
     MatButtonModule,
     MatProgressSpinnerModule,
     CommonModule,
-    LoaderComponent
+    LoaderComponent,
+    MatFormFieldModule,
+    MatInputModule
+
   ],
   templateUrl: './list-view.component.html',
   styleUrl: './list-view.component.scss'
@@ -91,9 +96,9 @@ export class ListViewComponent implements OnInit {
     this.appDataService.totalDataLength$.subscribe(length => this.datasetLength = length);
   }
 
-  async loadAppData() {
+  async loadAppData(filter: string = '') {
     this.loading = true;
-    await this.appDataService.getAppData(this.filter, this.sortDirection, this.pageIndex, this.pageSize)
+    await this.appDataService.getAppData(filter, this.sortDirection, this.pageIndex, this.pageSize)
       .subscribe(data => {
         this.appData = data;
         this.loading = false;
@@ -103,6 +108,15 @@ export class ListViewComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+
+  applyFilter(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement && inputElement.value) {
+      const filterValue = inputElement.value.trim();
+      this.loadAppData(filterValue);
+    }
   }
 
   onPageChange(event: any) {

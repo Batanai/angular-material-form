@@ -46,9 +46,21 @@
     pointer-events: none;
   }
   
+  .paginator-container {
+    display: flex;
+    justify-content: flex-start; /* Align paginator to the start (left) */
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+  
   .mat-paginator {
+    min-width: auto; /* Make sure paginator doesn't stretch */
+  }
+
+  .search-container {
     display: flex;
     justify-content: flex-start;
-    margin-top: 24px;
-    width: auto;
+    margin-left: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
