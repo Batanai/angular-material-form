@@ -2,7 +2,7 @@
 
 .table-container {
     overflow-x: auto;
-    width: 350%;
+    width: 100%;
 
 }
 
@@ -23,6 +23,7 @@
     align-items: flex-start;
     justify-content:start;
     padding-bottom: 16px;
+    font-size: 10px;
   }
 
 .column-header {
@@ -51,6 +52,10 @@
     justify-content: flex-start; /* Align paginator to the start (left) */
     margin-top: 16px;
     margin-left: 20px;
+    position: sticky;
+    bottom: 0;
+    background-color: white; /* Ensure it covers content behind */
+    z-index: 1; /* Make sure it appears above the table */
   }
   
   .mat-paginator {
@@ -63,4 +68,8 @@
     margin-left: 20px;
     margin-top: 16px;
     margin-bottom: 16px;
+    position: sticky;
+    top: 0;
+    background-color: white; /* Ensure it covers content behind */
+    z-index: 1; /* Make sure it appears above the table */
   }
