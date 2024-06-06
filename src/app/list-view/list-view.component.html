@@ -1,14 +1,18 @@
 <div class="search-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Search by APP ID</mat-label>
-      <input matInput (input)="applyFilter($event)" placeholder="Enter APP ID">
-    </mat-form-field>
-  </div>
+    <!-- <label for="search-input">Search by APP ID</label> -->
+    <input 
+        id="search-input" 
+        type="text" 
+        class="search-input" 
+        (input)="onSearch($event)" 
+        placeholder="Enter APP ID"
+    >
+</div>
 
 <app-loader [loading]="loading$ | async"></app-loader>
 
 <div class="table-container" [ngClass]="{'blurred': (loading$ | async)}">
-    <mat-table [dataSource]="appData" class="mat-elevation-z8 mat-table-responsive">
+    <mat-table [dataSource]="filteredData" class="mat-elevation-z8 mat-table-responsive">
       
       <!-- APP ID Column -->
       <ng-container matColumnDef="APP_ID">

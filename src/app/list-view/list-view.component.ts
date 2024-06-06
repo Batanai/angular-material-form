@@ -16,6 +16,8 @@ import { CommonModule } from '@angular/common';
 import { LoaderComponent } from '../loader/loader.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list-view',
@@ -40,7 +42,11 @@ import { MatInputModule } from '@angular/material/input';
 export class ListViewComponent implements OnInit {
 
   appData: AppData[] = [];
+  filteredData: AppData[] = [];
+
   loading$ = this.appDataService.loading;
+  searchSubject = new Subject<string>();
+
 
   datasetLength = 0;
   filter: string = '';
@@ -94,6 +100,11 @@ export class ListViewComponent implements OnInit {
   ngOnInit() {
     this.loadAppData();
     this.appDataService.totalDataLength$.subscribe(length => this.datasetLength = length);
+
+    // Subscribe to the searchSubject with a debounce time
+    this.searchSubject.pipe(debounceTime(300)).subscribe(searchText => {
+      this.filterData(searchText);
+    });
   }
 
   async loadAppData(filter: string = '') {
@@ -101,6 +112,7 @@ export class ListViewComponent implements OnInit {
     await this.appDataService.getAppData(filter, this.sortDirection, this.pageIndex, this.pageSize)
       .subscribe(data => {
         this.appData = data;
+        this.filteredData = data;
         this.loading = false;
       }, 
       (error) => {
@@ -110,13 +122,19 @@ export class ListViewComponent implements OnInit {
     );
   }
 
-
-  applyFilter(event: Event): void {
-    const inputElement = event.target as HTMLInputElement;
-    if (inputElement && inputElement.value) {
-      const filterValue = inputElement.value.trim();
-      this.loadAppData(filterValue);
+  filterData(searchText: string): void {
+    if (searchText) {
+      this.filteredData = this.appData.filter(item => item.APP_ID && item.APP_ID.includes(searchText));
+    } else {
+      this.filteredData = [...this.appData];
     }
+  }
+
+
+  onSearch(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    const searchText = inputElement.value;
+    this.searchSubject.next(searchText);
   }
 
   onPageChange(event: any) {
