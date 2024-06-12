@@ -12,7 +12,7 @@
 <app-loader [loading]="loading$ | async"></app-loader>
 
 <div class="table-container" [ngClass]="{'blurred': (loading$ | async)}">
-    <mat-table [dataSource]="filteredData" class="mat-elevation-z8 mat-table-responsive">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8 mat-table-responsive">
       
       <!-- APP ID Column -->
       <ng-container matColumnDef="APP_ID">

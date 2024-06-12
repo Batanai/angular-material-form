@@ -33,42 +33,11 @@ export class AppDataService {
     ];
   }
 
-  getAppData(filter: string, sortDirection: string, pageIndex: number, pageSize: number): Observable<AppData[]> {
+  getAppData(): Observable<AppData[]> {
     this.loadingSubject.next(true);
 
     return this.http.get<AppData[]>(`${this.BASE_URL}/items`).pipe(
-      map(data => {
-        // Map the incoming data
-        const mappedData = data.map(this.mapAppData);
-
-        // Apply filter
-        let filteredData = mappedData;
-        if (filter) {
-          filteredData = filteredData.filter(item =>
-            Object.values(item).some(val =>
-              val?.toString().toLowerCase().includes(filter.toLowerCase())
-            )
-          );
-        }
-        
-        // Apply sorting
-        if (sortDirection) {
-          filteredData.sort((a: any, b: any) => {
-            const isAsc = sortDirection === 'asc';
-            return compare(a['property'], b['property'], isAsc);
-          });
-        }
-
-        // Update the total length of the data
-        this.totalDataLengthSubject.next(filteredData.length);
-
-        // Apply pagination
-        const startIndex = pageIndex * pageSize;
-        const paginatedData = filteredData.slice(startIndex, startIndex + pageSize);
-        
-        console.log(paginatedData)
-        return paginatedData;
-      }),
+      map(data => data.map(this.mapAppData)),
       catchError(error => {
         console.error('Error fetching data', error);
         return [];

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppDataService } from '../services/app-data/app-data.service';
 import { AppData } from '../interfaces/AppData';
 
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { EditFormComponent } from '../edit-form/edit-form.component';
@@ -43,6 +43,8 @@ export class ListViewComponent implements OnInit {
 
   appData: AppData[] = [];
   filteredData: AppData[] = [];
+  dataSource = new MatTableDataSource<AppData>();
+
 
   loading$ = this.appDataService.loading;
   searchSubject = new Subject<string>();
@@ -90,6 +92,8 @@ export class ListViewComponent implements OnInit {
     'Initial Attestation Date',
   ];
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private appDataService: AppDataService, 
@@ -109,10 +113,12 @@ export class ListViewComponent implements OnInit {
 
   async loadAppData(filter: string = '') {
     this.loading = true;
-    await this.appDataService.getAppData(filter, this.sortDirection, this.pageIndex, this.pageSize)
+    await this.appDataService.getAppData()
       .subscribe(data => {
         this.appData = data;
         this.filteredData = data;
+        this.datasetLength = data.length;
+        this.applyPagination();
         this.loading = false;
       }, 
       (error) => {
@@ -125,8 +131,14 @@ export class ListViewComponent implements OnInit {
   filterData(searchText: string): void {
     if (searchText) {
       this.filteredData = this.appData.filter(item => item.APP_ID && item.APP_ID.includes(searchText));
+      this.dataSource.data = this.filteredData
+      this.datasetLength = this.filteredData.length;
+      this.applyPagination();
     } else {
       this.filteredData = [...this.appData];
+      this.dataSource.data = this.filteredData
+
+      this.datasetLength = this.appData.length;
     }
   }
 
@@ -140,7 +152,13 @@ export class ListViewComponent implements OnInit {
   onPageChange(event: any) {
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
-    this.loadAppData();
+    this.applyPagination();
+  }
+
+  applyPagination(): void {
+    const startIndex = this.pageIndex * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.dataSource.data = this.filteredData.slice(startIndex, endIndex);
   }
 
   onSortChange(event: any) {
