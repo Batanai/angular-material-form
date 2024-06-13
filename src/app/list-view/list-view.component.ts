@@ -185,6 +185,7 @@ export class ListViewComponent implements OnInit {
       if (result) {
         // Handle the updated result, e.g., save to server or update the local data array
         console.log('The dialog was closed with data: ', result);
+        this.ngOnInit();
       }
     });
   }

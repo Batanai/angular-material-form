@@ -57,7 +57,7 @@ export class AppDataService {
   }
 
   updateAppData(id: string | null, appData: Partial<AppData>): Observable<AppData> {
-    return this.http.put<AppData>(`${this.BASE_URL}/edit/${id}`, appData);
+    return this.http.put<AppData>(`${this.BASE_URL}/items`, appData);
   }
 
 
