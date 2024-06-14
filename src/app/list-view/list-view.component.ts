@@ -137,6 +137,7 @@ export class ListViewComponent implements OnInit {
     } else {
       this.filteredData = [...this.appData];
       this.dataSource.data = this.filteredData
+      this.applyPagination();
 
       this.datasetLength = this.appData.length;
     }
